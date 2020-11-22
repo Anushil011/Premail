@@ -1,0 +1,116 @@
+.container {
+  position: absolute;
+  top: 5%;
+  left: 25%;
+  width: 50%;
+  display: flex;
+  flex-flow: column;
+}
+
+.header {
+  text-align: center;
+  display: block;
+  font-size: 30px;
+  color: rgb(45, 139, 177);
+  margin: 30px;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+
+.Form {
+  display: inline-block;
+}
+
+.Input {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid rgb(53, 143, 179);
+  height: 35px;
+  padding: 3px 5px;
+  margin: 3px 5px;
+  color: rgb(7, 76, 104);
+}
+.Input:focus {
+  outline: none;
+  box-shadow: 1px 1px 2px 1px skyblue;
+}
+.Textarea {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid rgb(53, 143, 179);
+  padding: 3px 5px;
+  margin: 3px 5px;
+}
+
+.Textarea:focus {
+  outline: none;
+  box-shadow: 1px 1px 2px 1px skyblue;
+}
+
+.dateTime {
+  border-radius: 5px;
+  border: 1px solid rgb(53, 143, 179);
+  height: 35px;
+  padding: 3px 5px;
+  margin: 10px 5px;
+  color: rgb(7, 76, 104);
+}
+.dateTime:focus {
+  outline: none;
+  box-shadow: 1px 1px 2px 1px skyblue;
+}
+
+.submit {
+  width: 100px;
+  color: white;
+  background-color: rgb(53, 143, 179);
+  font-weight: bold;
+  font-size: larger;
+  border-radius: 10px;
+  margin: 5px 15px;
+  border: 1px solid rgb(45, 139, 177);
+  cursor: pointer;
+  padding: 10px 10px;
+}
+
+.submit:hover {
+  outline: none;
+  box-shadow: 1px 1px 2px 1px skyblue;
+  background-color: rgb(112, 199, 233);
+}
+
+.reset {
+  width: 100px;
+  color: white;
+  background-color: red;
+  font-weight: bold;
+  font-size: larger;
+  border-radius: 10px;
+  margin: 5px 15px;
+  border: 1px solid rgb(209, 0, 0);
+  cursor: pointer;
+  padding: 10px 10px;
+}
+
+.reset:hover {
+  outline: none;
+  box-shadow: 1px 1px 2px 1px rgb(233, 113, 113);
+  background-color: rgb(228, 106, 106);
+}
+
+.setMessage {
+  text-align: center;
+  display: none;
+  font-size: 30px;
+  color: rgb(45, 139, 177);
+  margin: 30px;
+  letter-spacing: 0.1em;
+}
+.showMessage {
+  text-align: center;
+  display: block;
+  font-size: 30px;
+  color: rgb(45, 139, 177);
+  margin: 30px;
+  letter-spacing: 0.1em;
+}
