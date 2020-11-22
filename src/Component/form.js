@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import axios from "axios";
 import classes from "./form.module.css";
 
@@ -37,21 +37,24 @@ const Form = () => {
   };
 
   //sends the email after the given time(in milliseconds)
-  const sendEmail = (time) => {
-    axios
-      .post("http://localhost:5000/sendemail", {
-        name: name,
-        email: email,
-        textMessage: textMessage,
-        time,
-      })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  const sendEmail = useCallback(
+    (time) => {
+      axios
+        .post("http://localhost:5000/sendemail", {
+          name: name,
+          email: email,
+          textMessage: textMessage,
+          time,
+        })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    [time]
+  );
 
   //returns the time formatted with local time zone concatenated
   const dateToSend = () => {
