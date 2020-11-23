@@ -19,11 +19,7 @@ const Form = () => {
     let testDate = new Date(sendDateTime); //create new Date object with inputted time in local time zone
     let currentDate = new Date();
     sendEmail(testDate - currentDate); //calling the sendmail function with time in milliseconds
-    setSent((prevState) => !prevState);
-    const resetTime = setTimeout(() => {
-      resetHandler();
-      clearTimeout(resetTime);
-    }, 3000);
+    setSent(true);
   };
 
   //reset the form
@@ -53,7 +49,7 @@ const Form = () => {
           console.log(err);
         });
     },
-    [time]
+    [email, name, textMessage]
   );
 
   //returns the time formatted with local time zone concatenated
@@ -145,7 +141,7 @@ const Form = () => {
         <button
           type="submit"
           className={classes.submit}
-          onClick={(event) => submitHandler(event)}
+          onClick={submitHandler}
         >
           Submit
         </button>

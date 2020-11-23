@@ -17,6 +17,7 @@ const refreshToken = process.env.REFRESH_TOKEN;
 const user = process.env.USER;
 
 app.post("/sendemail", (req, res) => {
+  console.log("post sendmail");
   //creating oAuth2Client to get refresh token and access token later on
   const oAuth2Client = new google.auth.OAuth2(
     clientId,
@@ -68,9 +69,12 @@ app.post("/sendemail", (req, res) => {
   };
 
   //calling function to send the email
-  setTimeout(() => {
+  const mail = setTimeout(() => {
     sendmail()
-      .then((result) => console.log("email sent ", result))
+      .then((result) => {
+        console.log("email sent ", result);
+        clearTimeout(mail);
+      })
       .catch((error) => console.log(error.message));
   }, req.body.time);
 });
